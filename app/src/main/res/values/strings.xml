@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">能力仓库</string>
+
+    <string name="login_title">登录</string>
+    <string name="login_name">用户</string>
+    <string name="login_password">密码</string>
+    <string name="logout_title">登出</string>
+    <string name="login_net">网络地址</string>
+
+    <string name="main_home">主页</string>
+    <string name="main_sort">应用分类</string>
+    <string name="main_scene">任务情景</string>
+    <string name="main_layout">座舱布局</string>
+    <string name="main_planning">我的规划</string>
+    
+    <string name="home_name">用户名：</string>
+    <string name="home_login_time">上次登录时间：</string>
+    <string name="home_app">选定应用：</string>
+    <string name="home_layout">选定布局：</string>
+    <string name="home_clear_app">清空选中应用</string>
+    <string name="home_clear_app_error">暂无选中应用</string>
+
+    <string name="detail_name" formatted="false">应用名称：</string>
+    <string name="detail_author" formatted="false">开发者：</string>
+    <string name="detail_category" formatted="false">类别：</string>
+    <string name="detail_scene" formatted="false">情景类型：</string>
+    <string name="detail_version" formatted="false">当前版本：</string>
+    <string name="detail_update_time" formatted="false">更新时间：</string>
+    <string name="detail_size" formatted="false">大小：</string>
+    <string name="detail_request" formatted="false">平台要求：</string>
+    <string name="detail_choose">选定</string>
+    <string name="detail_delete">取消选定</string>
+    <string name="detail_selected_app">已经选定应用</string>
+    <string name="detail_unselected_app">已经取消选定应用</string>
+
+    <string name="planning_choose_app">已选应用：</string>
+    <string name="planning_choose_layout">已选布局：</string>
+    <string name="planning_delete_message">是否在布局中删除该应用？</string>
+    <string name="planning_delete_ok">确定</string>
+    <string name="planning_delete_cancel">取消</string>
+    <string name="planning_layout_name">布局名称：</string>
+    <string name="planning_save">保存</string>
+    <string name="planning_save_success">保存成功</string>
+    <string name="planning_title_bar">状态栏</string>
+    <string name="planning_choosed">已经选择该应用</string>
+    <string name="planning_choose_view">请先选择显示位置</string>
+    <string name="planning_error">该应用与位置分辨率不符</string>
+    
+    <string name="cockpit_ground_prepare">地面准备</string>
+    <string name="cockpit_navigation_phase">导航阶段</string>
+    <string name="cockpit_air_interception_guide">空空拦截引导</string>
+    <string name="cockpit_air_interception_attack">空空拦截攻击</string>
+    <string name="cockpit_open_space_detection">空地探测</string>
+
+    <string name="login_role_admin">管理员</string>
+    <string name="login_role_user">用户</string>
+</resources>

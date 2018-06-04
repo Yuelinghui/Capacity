@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <com.capacity.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_app_grid"
+        android:padding="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/img_logo"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitCenter" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DetailText"
+                            android:layout_weight="1"
+                            android:text="@string/detail_name" />
+
+                        <TextView
+                            android:id="@+id/txt_name"
+                            style="@style/DetailText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DetailText"
+                            android:layout_weight="1"
+                            android:text="@string/detail_author" />
+
+                        <TextView
+                            android:id="@+id/txt_author"
+                            style="@style/DetailText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DetailText"
+                            android:layout_weight="1"
+                            android:text="@string/detail_category" />
+
+                        <TextView
+                            android:id="@+id/txt_category"
+                            style="@style/DetailText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DetailText"
+                            android:layout_weight="1"
+                            android:text="@string/detail_scene" />
+
+                        <TextView
+                            android:id="@+id/txt_scene"
+                            style="@style/DetailText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DetailText"
+                            android:layout_weight="1"
+                            android:text="@string/detail_version" />
+
+                        <TextView
+                            android:id="@+id/txt_version"
+                            style="@style/DetailText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DetailText"
+                            android:layout_weight="1"
+                            android:text="@string/detail_update_time" />
+
+                        <TextView
+                            android:id="@+id/txt_time"
+                            style="@style/DetailText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DetailText"
+                            android:layout_weight="1"
+                            android:text="@string/detail_request" />
+
+                        <TextView
+                            android:id="@+id/txt_request"
+                            style="@style/DetailText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/icon_left_arrow" />
+
+                <HorizontalScrollView
+                    android:id="@+id/pager_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/layout_thumb"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/icon_right_arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textColor="@color/green"
+                android:textSize="@dimen/txt_size_small" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
