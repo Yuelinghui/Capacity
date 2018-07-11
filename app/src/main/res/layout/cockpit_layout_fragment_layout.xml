@@ -146,7 +146,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+
+						android:layout_marginRight="5dp">
 
                         <TextView
                             android:id="@+id/txt_name_5"
@@ -166,9 +168,139 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center"
+
+						android:layout_marginLeft="5dp">
+
+						<TextView
+							android:id="@+id/txt_name_6"
+							style="@style/DetailText"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="布局7" />
+
+						<ImageView
+							android:id="@+id/img_layout_6"
+							android:layout_width="match_parent"
+							android:layout_height="100dp"
+							android:background="@drawable/bg_cockpit_layout"
+							android:src="@drawable/new_layout" />
+
+					</LinearLayout>
                 </LinearLayout>
 
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="20dp">
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center"
+
+						android:layout_marginRight="5dp">
+
+						<TextView
+							android:id="@+id/txt_name_7"
+							style="@style/DetailText"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="新布局8" />
+
+						<ImageView
+							android:id="@+id/img_layout_7"
+							android:layout_width="match_parent"
+							android:layout_height="100dp"
+							android:background="@drawable/bg_cockpit_layout"
+							android:src="@drawable/new_layout_8" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center"
+						android:layout_marginLeft="5dp">
+
+						<TextView
+							android:id="@+id/txt_name_8"
+							style="@style/DetailText"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="布局9" />
+
+						<ImageView
+							android:id="@+id/img_layout_8"
+							android:layout_width="match_parent"
+							android:layout_height="100dp"
+							android:background="@drawable/bg_cockpit_layout"
+							android:src="@drawable/new_layout_9" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="20dp">
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center"
+
+						android:layout_marginRight="5dp">
+
+						<TextView
+							android:id="@+id/txt_name_9"
+							style="@style/DetailText"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="新布局10" />
+
+						<ImageView
+							android:id="@+id/img_layout_9"
+							android:layout_width="match_parent"
+							android:layout_height="100dp"
+							android:background="@drawable/bg_cockpit_layout"
+							android:src="@drawable/new_layout_10" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center"
+
+						android:layout_marginLeft="5dp">
+
+						<!--<TextView-->
+							<!--android:id="@+id/txt_name_6"-->
+							<!--style="@style/DetailText"-->
+							<!--android:layout_width="wrap_content"-->
+							<!--android:layout_height="wrap_content"-->
+							<!--android:text="布局7" />-->
+
+						<!--<ImageView-->
+							<!--android:id="@+id/img_layout_6"-->
+							<!--android:layout_width="match_parent"-->
+							<!--android:layout_height="100dp"-->
+							<!--android:background="@drawable/bg_cockpit_layout"-->
+							<!--android:src="@drawable/new_layout" />-->
+
+					</LinearLayout>
+				</LinearLayout>
 
             </LinearLayout>
         </ScrollView>

@@ -29,6 +29,14 @@ public class CockpitLayoutFragment extends BaseFragment implements View.OnClickL
     ImageView mLayout4;
     @Bind(R.id.img_layout_5)
     ImageView mLayout5;
+    @Bind(R.id.img_layout_6)
+    ImageView mLayout6;
+    @Bind(R.id.img_layout_7)
+    ImageView mLayout7;
+    @Bind(R.id.img_layout_8)
+    ImageView mLayout8;
+    @Bind(R.id.img_layout_9)
+    ImageView mLayout9;
 
 
     @Bind(R.id.txt_name_1)
@@ -41,6 +49,15 @@ public class CockpitLayoutFragment extends BaseFragment implements View.OnClickL
     TextView mName4;
     @Bind(R.id.txt_name_5)
     TextView mName5;
+    @Bind(R.id.txt_name_6)
+    TextView mName6;
+    @Bind(R.id.txt_name_7)
+    TextView mName7;
+    @Bind(R.id.txt_name_8)
+    TextView mName8;
+    @Bind(R.id.txt_name_9)
+    TextView mName9;
+
 
     @Bind(R.id.title_bar)
     TitleBar mTitleBar;
@@ -91,6 +108,10 @@ public class CockpitLayoutFragment extends BaseFragment implements View.OnClickL
         mLayout3.setOnClickListener(this);
         mLayout4.setOnClickListener(this);
         mLayout5.setOnClickListener(this);
+        mLayout6.setOnClickListener(this);
+        mLayout7.setOnClickListener(this);
+        mLayout8.setOnClickListener(this);
+        mLayout9.setOnClickListener(this);
 
     }
 
@@ -116,6 +137,23 @@ public class CockpitLayoutFragment extends BaseFragment implements View.OnClickL
             case R.id.img_layout_5:
                 mLayoutType = 5;
                 mLayoutName = mName5.getText().toString();
+                break;
+            case R.id.img_layout_6:
+                mLayoutType = 6;
+                mLayoutName = mName6.getText().toString();
+                break;
+            case R.id.img_layout_7:
+                mLayoutType = 7;
+                mLayoutName = mName7.getText().toString();
+                break;
+            case R.id.img_layout_8:
+                mLayoutType = 8;
+                mLayoutName = mName8.getText().toString();
+                break;
+            case R.id.img_layout_9:
+                mLayoutType = 9;
+                mLayoutName = mName9.getText().toString();
+                break;
         }
         changeSelectedView(v);
     }

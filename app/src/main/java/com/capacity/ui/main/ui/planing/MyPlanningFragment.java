@@ -48,6 +48,15 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
     ViewStub mLayoutStub4;
     @Bind(R.id.layout_5)
     ViewStub mLayoutStub5;
+    @Bind(R.id.layout_6)
+    ViewStub mLayoutStub6;
+    @Bind(R.id.layout_7)
+    ViewStub mLayoutStub7;
+    @Bind(R.id.layout_8)
+    ViewStub mLayoutStub8;
+    @Bind(R.id.layout_9)
+    ViewStub mLayoutStub9;
+
 
     @Bind(R.id.edit_name)
     EditText mNameEdit;
@@ -71,11 +80,11 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
     private MainModel mMainModel;
 
 
-    public static MyPlanningFragment newInstance(int type,String name) {
+    public static MyPlanningFragment newInstance(int type, String name) {
 
         Bundle args = new Bundle();
         args.putInt(TYPE_LAYOUT, type);
-        args.putString(LAYOUT_NAME,name);
+        args.putString(LAYOUT_NAME, name);
         MyPlanningFragment fragment = new MyPlanningFragment();
         fragment.setArguments(args);
         return fragment;
@@ -115,10 +124,18 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
                     areas = initAreasLayout4();
                 } else if (mType == 5) {
                     areas = initAreasLayout5();
+                } else if (mType == 6) {
+                    areas = initAreasLayout6();
+                } else if (mType == 7) {
+                    areas = initAreasLayout7();
+                } else if (mType == 8) {
+                    areas = initAreasLayout8();
+                } else if (mType == 9) {
+                    areas = initAreasLayout9();
                 }
 
 
-                mMainModel.createLayout(mNameEdit.getText().toString(),String.valueOf(mType),areas, new RxSubscriber<Void>() {
+                mMainModel.createLayout(mNameEdit.getText().toString(), String.valueOf(mType), areas, new RxSubscriber<Void>() {
                     @Override
                     protected void onNetStart() {
                         mActivity.showLoadingView();
@@ -191,10 +208,71 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
         } else if (mType == 5) {
             view = mLayoutStub5.inflate();
             initLayout5(view);
+        } else if (mType == 6) {
+            view = mLayoutStub6.inflate();
+            initLayout6(view);
+        } else if (mType == 7) {
+            view = mLayoutStub7.inflate();
+            initLayout7(view);
+        } else if (mType == 8) {
+            view = mLayoutStub8.inflate();
+            initLayout8(view);
+        } else if (mType == 9) {
+            view = mLayoutStub9.inflate();
+            initLayout9(view);
+
         }
 
         mNameEdit.setText(mName);
         mGridView.setOnItemClickListener(mItemClickListener);
+    }
+
+    private void initLayout9(View view) {
+        mArea1 = (PlanningLayout) view.findViewById(R.id.layout_pager_1);
+        mArea2 = (PlanningLayout) view.findViewById(R.id.layout_pager_2);
+        mArea3 = (PlanningLayout) view.findViewById(R.id.layout_pager_3);
+
+        mArea1.setOnClickListener(this);
+        mArea2.setOnClickListener(this);
+        mArea3.setOnClickListener(this);
+    }
+
+    private void initLayout8(View view) {
+        mArea1 = (PlanningLayout) view.findViewById(R.id.layout_pager_1);
+        mArea2 = (PlanningLayout) view.findViewById(R.id.layout_pager_2);
+        mArea3 = (PlanningLayout) view.findViewById(R.id.layout_pager_3);
+        mArea4 = (PlanningLayout) view.findViewById(R.id.layout_pager_4);
+
+        mArea1.setOnClickListener(this);
+        mArea2.setOnClickListener(this);
+        mArea3.setOnClickListener(this);
+        mArea4.setOnClickListener(this);
+    }
+
+    private void initLayout7(View view) {
+        mArea1 = (PlanningLayout) view.findViewById(R.id.layout_pager_1);
+        mArea2 = (PlanningLayout) view.findViewById(R.id.layout_pager_2);
+        mArea3 = (PlanningLayout) view.findViewById(R.id.layout_pager_3);
+        mArea4 = (PlanningLayout) view.findViewById(R.id.layout_pager_4);
+
+        mArea1.setOnClickListener(this);
+        mArea2.setOnClickListener(this);
+        mArea3.setOnClickListener(this);
+        mArea4.setOnClickListener(this);
+    }
+
+    private void initLayout6(View view) {
+        mArea1 = (PlanningLayout) view.findViewById(R.id.layout_pager_1);
+        mArea2 = (PlanningLayout) view.findViewById(R.id.layout_pager_2);
+        mArea3 = (PlanningLayout) view.findViewById(R.id.layout_pager_3);
+        mArea4 = (PlanningLayout) view.findViewById(R.id.layout_pager_4);
+        mArea5 = (PlanningLayout) view.findViewById(R.id.layout_pager_5);
+
+        mArea1.setOnClickListener(this);
+        mArea2.setOnClickListener(this);
+        mArea3.setOnClickListener(this);
+        mArea4.setOnClickListener(this);
+        mArea5.setOnClickListener(this);
     }
 
     private void initLayout5(View view) {
@@ -316,7 +394,7 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
                 } else if (mCheckViewPosition == 7) {
                     mArea7.addImageView(imageView);
                 }
-                imageView.setData(itemData,viewType);
+                imageView.setData(itemData, viewType);
                 mAppAdapter.notifyDataSetChanged();
             }
         }
@@ -341,6 +419,7 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
         }
         return Integer.valueOf(typeValue);
     }
+
     private PlanningImageView.OnDismissListener mDismissListener = new PlanningImageView.OnDismissListener() {
         @Override
         public void onDismiss(PlanningImageView view, String url) {
@@ -355,6 +434,10 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
                 mArea4.removeImageView(view);
             } else if (mCheckViewPosition == 5) {
                 mArea5.removeImageView(view);
+            } else if (mCheckViewPosition == 6) {
+                mArea6.removeImageView(view);
+            } else if (mCheckViewPosition == 7) {
+                mArea7.removeImageView(view);
             }
 
             for (AppItemData itemData : mAppItemList) {
@@ -592,6 +675,100 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
         area5.setPosition(5);
         area5.setAppIds(mArea5.getAreaIds());
         result.add(area5);
+
+        return result;
+    }
+
+    private List<LayoutAreasParam> initAreasLayout6() {
+        List<LayoutAreasParam> result = new ArrayList<LayoutAreasParam>();
+
+        LayoutAreasParam area1 = new LayoutAreasParam();
+        area1.setPosition(1);
+        area1.setAppIds(mArea1.getAreaIds());
+        result.add(area1);
+
+        LayoutAreasParam area2 = new LayoutAreasParam();
+        area2.setPosition(2);
+        area2.setAppIds(mArea2.getAreaIds());
+        result.add(area2);
+
+        LayoutAreasParam area3 = new LayoutAreasParam();
+        area3.setPosition(3);
+        area3.setAppIds(mArea3.getAreaIds());
+        result.add(area3);
+
+        return result;
+    }
+
+    private List<LayoutAreasParam> initAreasLayout7() {
+        List<LayoutAreasParam> result = new ArrayList<LayoutAreasParam>();
+
+//        LayoutAreasParam area1 = new LayoutAreasParam();
+//        area1.setPosition(1);
+//        area1.setAppIds(mArea1.getAreaIds());
+//        result.add(area1);
+//
+//        LayoutAreasParam area2 = new LayoutAreasParam();
+//        area2.setPosition(2);
+//        area2.setAppIds(mArea2.getAreaIds());
+//        result.add(area2);
+
+        LayoutAreasParam area3 = new LayoutAreasParam();
+        area3.setPosition(1);
+        area3.setAppIds(mArea3.getAreaIds());
+        result.add(area3);
+
+        LayoutAreasParam area4 = new LayoutAreasParam();
+        area4.setPosition(2);
+        area4.setAppIds(mArea4.getAreaIds());
+        result.add(area4);
+
+        return result;
+    }
+
+    private List<LayoutAreasParam> initAreasLayout8() {
+        List<LayoutAreasParam> result = new ArrayList<LayoutAreasParam>();
+
+//        LayoutAreasParam area1 = new LayoutAreasParam();
+//        area1.setPosition(1);
+//        area1.setAppIds(mArea1.getAreaIds());
+//        result.add(area1);
+//
+//        LayoutAreasParam area2 = new LayoutAreasParam();
+//        area2.setPosition(2);
+//        area2.setAppIds(mArea2.getAreaIds());
+//        result.add(area2);
+
+        LayoutAreasParam area3 = new LayoutAreasParam();
+        area3.setPosition(1);
+        area3.setAppIds(mArea3.getAreaIds());
+        result.add(area3);
+
+        LayoutAreasParam area4 = new LayoutAreasParam();
+        area4.setPosition(2);
+        area4.setAppIds(mArea4.getAreaIds());
+        result.add(area4);
+
+        return result;
+    }
+
+    private List<LayoutAreasParam> initAreasLayout9() {
+        List<LayoutAreasParam> result = new ArrayList<LayoutAreasParam>();
+
+//        LayoutAreasParam area1 = new LayoutAreasParam();
+//        area1.setPosition(1);
+//        area1.setAppIds(mArea3.getAreaIds());
+//        result.add(area1);
+//
+//        LayoutAreasParam area2 = new LayoutAreasParam();
+//        area2.setPosition(2);
+//        area2.setAppIds(mArea2.getAreaIds());
+//        result.add(area2);
+
+        LayoutAreasParam area3 = new LayoutAreasParam();
+        area3.setPosition(1);
+        area3.setAppIds(mArea3.getAreaIds());
+        result.add(area3);
 
         return result;
     }
