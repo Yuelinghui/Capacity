@@ -229,50 +229,34 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
 
     private void initLayout9(View view) {
         mArea1 = (PlanningLayout) view.findViewById(R.id.layout_pager_1);
-        mArea2 = (PlanningLayout) view.findViewById(R.id.layout_pager_2);
-        mArea3 = (PlanningLayout) view.findViewById(R.id.layout_pager_3);
 
         mArea1.setOnClickListener(this);
-        mArea2.setOnClickListener(this);
-        mArea3.setOnClickListener(this);
     }
 
     private void initLayout8(View view) {
         mArea1 = (PlanningLayout) view.findViewById(R.id.layout_pager_1);
         mArea2 = (PlanningLayout) view.findViewById(R.id.layout_pager_2);
-        mArea3 = (PlanningLayout) view.findViewById(R.id.layout_pager_3);
-        mArea4 = (PlanningLayout) view.findViewById(R.id.layout_pager_4);
 
         mArea1.setOnClickListener(this);
         mArea2.setOnClickListener(this);
-        mArea3.setOnClickListener(this);
-        mArea4.setOnClickListener(this);
     }
 
     private void initLayout7(View view) {
         mArea1 = (PlanningLayout) view.findViewById(R.id.layout_pager_1);
         mArea2 = (PlanningLayout) view.findViewById(R.id.layout_pager_2);
-        mArea3 = (PlanningLayout) view.findViewById(R.id.layout_pager_3);
-        mArea4 = (PlanningLayout) view.findViewById(R.id.layout_pager_4);
 
         mArea1.setOnClickListener(this);
         mArea2.setOnClickListener(this);
-        mArea3.setOnClickListener(this);
-        mArea4.setOnClickListener(this);
     }
 
     private void initLayout6(View view) {
         mArea1 = (PlanningLayout) view.findViewById(R.id.layout_pager_1);
         mArea2 = (PlanningLayout) view.findViewById(R.id.layout_pager_2);
         mArea3 = (PlanningLayout) view.findViewById(R.id.layout_pager_3);
-        mArea4 = (PlanningLayout) view.findViewById(R.id.layout_pager_4);
-        mArea5 = (PlanningLayout) view.findViewById(R.id.layout_pager_5);
 
         mArea1.setOnClickListener(this);
         mArea2.setOnClickListener(this);
         mArea3.setOnClickListener(this);
-        mArea4.setOnClickListener(this);
-        mArea5.setOnClickListener(this);
     }
 
     private void initLayout5(View view) {
@@ -703,24 +687,14 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
     private List<LayoutAreasParam> initAreasLayout7() {
         List<LayoutAreasParam> result = new ArrayList<LayoutAreasParam>();
 
-//        LayoutAreasParam area1 = new LayoutAreasParam();
-//        area1.setPosition(1);
-//        area1.setAppIds(mArea1.getAreaIds());
-//        result.add(area1);
-//
-//        LayoutAreasParam area2 = new LayoutAreasParam();
-//        area2.setPosition(2);
-//        area2.setAppIds(mArea2.getAreaIds());
-//        result.add(area2);
-
         LayoutAreasParam area3 = new LayoutAreasParam();
         area3.setPosition(1);
-        area3.setAppIds(mArea3.getAreaIds());
+        area3.setAppIds(mArea1.getAreaIds());
         result.add(area3);
 
         LayoutAreasParam area4 = new LayoutAreasParam();
         area4.setPosition(2);
-        area4.setAppIds(mArea4.getAreaIds());
+        area4.setAppIds(mArea2.getAreaIds());
         result.add(area4);
 
         return result;
@@ -729,24 +703,14 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
     private List<LayoutAreasParam> initAreasLayout8() {
         List<LayoutAreasParam> result = new ArrayList<LayoutAreasParam>();
 
-//        LayoutAreasParam area1 = new LayoutAreasParam();
-//        area1.setPosition(1);
-//        area1.setAppIds(mArea1.getAreaIds());
-//        result.add(area1);
-//
-//        LayoutAreasParam area2 = new LayoutAreasParam();
-//        area2.setPosition(2);
-//        area2.setAppIds(mArea2.getAreaIds());
-//        result.add(area2);
-
         LayoutAreasParam area3 = new LayoutAreasParam();
         area3.setPosition(1);
-        area3.setAppIds(mArea3.getAreaIds());
+        area3.setAppIds(mArea1.getAreaIds());
         result.add(area3);
 
         LayoutAreasParam area4 = new LayoutAreasParam();
         area4.setPosition(2);
-        area4.setAppIds(mArea4.getAreaIds());
+        area4.setAppIds(mArea2.getAreaIds());
         result.add(area4);
 
         return result;
@@ -755,19 +719,9 @@ public class MyPlanningFragment extends BaseFragment implements View.OnClickList
     private List<LayoutAreasParam> initAreasLayout9() {
         List<LayoutAreasParam> result = new ArrayList<LayoutAreasParam>();
 
-//        LayoutAreasParam area1 = new LayoutAreasParam();
-//        area1.setPosition(1);
-//        area1.setAppIds(mArea3.getAreaIds());
-//        result.add(area1);
-//
-//        LayoutAreasParam area2 = new LayoutAreasParam();
-//        area2.setPosition(2);
-//        area2.setAppIds(mArea2.getAreaIds());
-//        result.add(area2);
-
         LayoutAreasParam area3 = new LayoutAreasParam();
         area3.setPosition(1);
-        area3.setAppIds(mArea3.getAreaIds());
+        area3.setAppIds(mArea1.getAreaIds());
         result.add(area3);
 
         return result;
