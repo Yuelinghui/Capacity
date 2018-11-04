@@ -6,7 +6,6 @@ import android.widget.EditText;
 import com.capacity.manager.UserInfoManager;
 import com.capacity.ui.R;
 import com.capacity.ui.core.BaseFragment;
-import com.capacity.ui.core.Role;
 import com.capacity.ui.login.entity.UserInfo;
 import com.capacity.ui.login.model.LoginModel;
 import com.capacity.ui.main.ui.MainActivity;
@@ -59,8 +58,7 @@ public class LoginFragment extends BaseFragment {
                 }
                 String name = mNameEdit.getText().toString();
                 String password = mPasswordEdit.getText().toString();
-                String role = Role.USER;
-                mLoginModel.login(name, password,role, new RxSubscriber<UserInfo>() {
+                mLoginModel.login(name, password, new RxSubscriber<UserInfo>() {
                     @Override
                     protected void onNetStart() {
                         mActivity.showLoadingView();

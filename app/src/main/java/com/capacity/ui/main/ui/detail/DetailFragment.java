@@ -93,7 +93,7 @@ public class DetailFragment extends BaseFragment {
         mTitleBar.setOnLeftClickListener(new TitleBar.OnLeftClickListener() {
             @Override
             public void onLeftClick() {
-                mActivity.onBackPressed();
+                mActivity.getSupportFragmentManager().popBackStack();
             }
         });
 

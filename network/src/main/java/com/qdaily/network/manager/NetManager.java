@@ -1,5 +1,7 @@
 package com.qdaily.network.manager;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.qdaily.network.UrlApi;
 import com.qdaily.network.interceptor.AddCookiesInterceptor;
 import com.qdaily.network.interceptor.ReceivedCookiesInterceptor;
@@ -22,9 +24,10 @@ public class NetManager {
     private NetManager() {
         mOkHttpClient = new OkHttpClient.Builder().addInterceptor(new AddCookiesInterceptor())
                 .addInterceptor(new ReceivedCookiesInterceptor()).build();
+        Gson gson = new GsonBuilder().setLenient().create();
         mRetrofit = new Retrofit.Builder()
                 .addConverterFactory(ScalarsConverterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(mOkHttpClient)
                 .baseUrl(UrlApi.getCurrentUrl()).build();

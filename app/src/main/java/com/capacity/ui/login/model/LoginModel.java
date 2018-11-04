@@ -3,6 +3,7 @@ package com.capacity.ui.login.model;
 import android.content.Context;
 
 import com.capacity.ui.core.CommandCode;
+import com.capacity.ui.core.Role;
 import com.capacity.ui.login.entity.UserInfo;
 import com.capacity.ui.login.protocol.LoginService;
 import com.qdaily.frame.core.RxSubscriber;
@@ -20,8 +21,8 @@ public class LoginModel extends NetModel {
         super(context);
     }
 
-    public void login(String name, String password,String role, RxSubscriber<UserInfo> subscriber) {
+    public void login(String name, String password, RxSubscriber<UserInfo> subscriber) {
         LoginService loginService = NetManager.getInstance().create(LoginService.class);
-        RxManager.getInstance().doSubscribe(loginService.login(CommandCode.LOGIN, role, name, password), subscriber);
+        RxManager.getInstance().doSubscribe(loginService.login(CommandCode.LOGIN, Role.USER,name, password), subscriber);
     }
 }

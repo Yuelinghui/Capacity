@@ -1,59 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/bg_login"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="50dp"
+		android:orientation="vertical"
+		android:padding="20dp"
+		android:background="#4d000000">
+
+		<EditText
+			android:id="@+id/edit_name"
+			android:layout_width="500dp"
+			android:layout_height="50dp"
+			android:background="@drawable/bg_login_edit"
+			android:hint="@string/login_name"
+			android:padding="10dp"
+			android:singleLine="true"
+			android:textColor="@color/bg_custom_toast"
+			android:textColorHint="@color/bg_custom_toast"
+			android:textSize="@dimen/txt_size_large" />
+
+		<EditText
+			android:id="@+id/edit_password"
+			android:layout_width="500dp"
+			android:layout_height="50dp"
+			android:layout_marginTop="30dp"
+			android:background="@drawable/bg_login_edit"
+			android:hint="@string/login_password"
+			android:inputType="textPassword"
+			android:padding="10dp"
+			android:singleLine="true"
+			android:textColor="@color/bg_custom_toast"
+			android:textColorHint="@color/bg_custom_toast"
+			android:textSize="@dimen/txt_size_large" />
 
 
-        <EditText
-            android:id="@+id/edit_name"
-            android:layout_width="500dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/bg_login_edit"
-            android:hint="@string/login_name"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="@color/green"
-            android:textColorHint="@color/green"
-            android:textSize="@dimen/txt_size_large" />
-
-        <EditText
-            android:id="@+id/edit_password"
-            android:layout_width="500dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/bg_login_edit"
-            android:hint="@string/login_password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="@color/green"
-            android:textColorHint="@color/green"
-            android:textSize="@dimen/txt_size_large" />
+		<EditText
+			android:id="@+id/edit_net"
+			android:layout_width="500dp"
+			android:layout_height="50dp"
+			android:layout_marginTop="30dp"
+			android:background="@drawable/bg_login_edit"
+			android:hint="@string/login_net"
+			android:padding="10dp"
+			android:singleLine="true"
+			android:textColor="@color/bg_custom_toast"
+			android:textColorHint="@color/bg_custom_toast"
+			android:textSize="@dimen/txt_size_large" />
 
 
+	</LinearLayout>
 
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="50dp"
+		android:src="@drawable/bg_logo" />
 
-    <EditText
-        android:id="@+id/edit_net"
-        android:layout_width="500dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/bg_login_edit"
-        android:hint="@string/login_net"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:textColor="@color/green"
-        android:textColorHint="@color/green"
-        android:textSize="@dimen/txt_size_large" />
-
-</LinearLayout>
+</RelativeLayout>

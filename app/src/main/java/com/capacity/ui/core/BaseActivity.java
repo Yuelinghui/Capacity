@@ -95,17 +95,17 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
     public void showLoadingView() {
-        if (mProgressDialog == null) {
-            mProgressDialog = new ProgressDialog(this);
-            mProgressDialog.setCanceledOnTouchOutside(false);
-        }
-        mProgressDialog.show();
+//        if (mProgressDialog == null) {
+//            mProgressDialog = new ProgressDialog(this);
+//            mProgressDialog.setCanceledOnTouchOutside(false);
+//        }
+//        mProgressDialog.show();
     }
 
     public void dismissLoadingView() {
-        if (!isFinishing() && mProgressDialog != null && mProgressDialog.isShowing()) {
-            mProgressDialog.dismiss();
-        }
+//        if (!isFinishing() && mProgressDialog != null && mProgressDialog.isShowing()) {
+//            mProgressDialog.dismiss();
+//        }
     }
 
     /**

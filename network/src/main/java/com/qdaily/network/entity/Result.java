@@ -15,7 +15,7 @@ public class Result<T> implements Serializable{
     @SerializedName("msg")
     private String message;
 
-    @SerializedName("errCode")
+    @SerializedName("status")
     private int errorCode;
 
     @SerializedName("object")

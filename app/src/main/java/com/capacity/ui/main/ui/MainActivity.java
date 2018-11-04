@@ -7,21 +7,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.capacity.ui.R;
 import com.capacity.ui.core.BaseActivity;
 import com.capacity.ui.login.LoginActivity;
+import com.capacity.ui.main.entity.AppInfo;
+import com.capacity.ui.main.entity.AppItemData;
 import com.capacity.ui.main.entity.AppSortInfo;
 import com.capacity.ui.main.model.MainModel;
 import com.capacity.ui.main.ui.cockpit.CockpitLayoutFragment;
 import com.capacity.ui.main.ui.home.HomeFragment;
 import com.capacity.ui.main.ui.planing.MyPlanningFragment;
+import com.capacity.ui.main.ui.sort.AppGridAdapter;
 import com.capacity.ui.main.ui.sort.AppSortFragment;
 import com.capacity.widget.MenuText;
 import com.capacity.widget.TitleBar;
 import com.qdaily.frame.core.RxSubscriber;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
@@ -52,6 +57,8 @@ public class MainActivity extends BaseActivity {
     TextView mLayoutTxt;
     @Bind(R.id.txt_planning)
     TextView mPlanningTxt;
+    @Bind(R.id.right_drawer)
+    ListView mDrawerList;
 
     private View mSelectedView;
 
@@ -63,6 +70,10 @@ public class MainActivity extends BaseActivity {
     private List<AppSortInfo> mSceneSourceList;
     private int mPlanningType = 1;
     private String mPlanningName;
+
+    private AppGridAdapter mAdapter;
+
+    private List<AppInfo> mAppList;
 
     private MainModel mHomeModel;
 
@@ -158,6 +169,45 @@ public class MainActivity extends BaseActivity {
 
         mHomeTxt.performClick();
 
+        mHomeModel.getSelectedApp(new RxSubscriber<List<AppInfo>>() {
+            @Override
+            protected void onNetStart() {
+            }
+
+            @Override
+            protected void onSuccess(List<AppInfo> appInfos) {
+                mAppList = appInfos;
+                mAdapter = new AppGridAdapter(MainActivity.this,conver(mAppList));
+                mDrawerList.setAdapter(mAdapter);
+            }
+
+            @Override
+            protected void onFail(String msg) {
+
+            }
+
+            @Override
+            protected void onFinish() {
+
+            }
+        });
+
+    }
+
+    private List<AppItemData> conver(List<AppInfo> appInfos) {
+
+        List<AppItemData> result = new ArrayList<>();
+        for (AppInfo appinfo : appInfos) {
+            AppItemData appItemData = new AppItemData();
+            appItemData.appIcon = appinfo.getIcon();
+            appItemData.appName = appinfo.getName();
+            appItemData.appId = appinfo.getId();
+            appItemData.appInfo = appinfo;
+            appItemData.hasSelected = true;
+            result.add(appItemData);
+        }
+
+        return result;
     }
 
     private void initScene() {

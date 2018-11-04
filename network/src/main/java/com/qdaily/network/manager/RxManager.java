@@ -60,6 +60,7 @@ public class RxManager {
             @Override
             public void call(Throwable throwable) {
                 subscriber.onError(throwable);
+                subscriber.onCompleted();
             }
         };
 
